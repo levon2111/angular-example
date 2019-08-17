@@ -1,0 +1,35 @@
+<footer [hidden]="isFooterHidden" class="b-footer">
+  <a id="to-top" (click)="goToTop()"><i class="fa fa-chevron-up"></i></a>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="b-footer__company">
+          <div class="b-nav__logo">
+            <a routerLink="/home"><img src="../../../assets/images/logo/logo-black.png" alt="Logo"></a>
+          </div>
+          <p>© 2018 gear.am. All rights reserved.</p>
+        </div>
+      </div>
+      <div class="col-xs-8">
+        <div class="b-footer__content">
+          <div class="b-footer__content-social">
+            <a href="#"><span class="fa fa-facebook-square"></span></a>
+            <a href="#"><span class="fa fa-twitter-square"></span></a>
+            <a href="#"><span class="fa fa-google-plus-square"></span></a>
+            <a href="#"><span class="fa fa-instagram"></span></a>
+            <a href="#"><span class="fa fa-youtube-square"></span></a>
+            <a href="#"><span class="fa fa-skype"></span></a>
+          </div>
+          <nav class="b-footer__content-nav">
+            <ul>
+              <li><a routerLink="/home">Home</a></li>
+              <li><a routerLink="/about">About</a></li>
+              <li><a routerLink="/blog/posts">Blog</a></li>
+              <li><a routerLink="/contacts">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer><!--b-footer-->

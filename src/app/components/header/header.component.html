@@ -1,0 +1,86 @@
+<header id="this-is-top" class="b-topBar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-xs-6">
+        <div class="b-topBar__addr">
+          <span class="fa fa-map-marker"></span>
+          202 W 7TH ST, LOS ANGELES, CA 90014
+        </div>
+      </div>
+      <div class="col-md-2 col-xs-6">
+        <div class="b-topBar__tel">
+          <span class="fa fa-phone"></span>
+          1-800- 624-5462
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-6">
+        <nav class="b-topBar__nav">
+          <ul>
+            <li><a routerLink="/sign-up" routerLinkActive="true">Register</a></li>
+            <li><a routerLink="/sign-in" routerLinkActive="true">Sign in</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-2 col-xs-6">
+        <div class="b-topBar__lang">
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle='dropdown'>Language</a>
+            <a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span class="b-topBar__lang-flag m-en"></span>EN<span class="fa fa-caret-down"></span></a>
+            <ul class="dropdown-menu h-lang">
+              <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span class="b-topBar__lang-flag m-en"></span>ENG</a></li>
+              <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span class="b-topBar__lang-flag m-rus"></span>RUS</a></li>
+              <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span class="b-topBar__lang-flag m-arm"></span>ARM</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header><!--b-topBar-->
+
+<nav class="b-nav">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 col-xs-4">
+        <div class="b-nav__logo">
+          <a routerLink="/home"><img src="../../../assets/images/logo/logo.png" alt="Logo"></a>
+        </div>
+      </div>
+      <div class="col-sm-9 col-xs-8">
+        <div class="b-nav__list">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" (click)="toggleMenu()">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse navbar-main-slide" id="nav" [@navBarCollapse]="menuIsOpened">
+            <ul class="navbar-nav-menu">
+              <li class="dropdown">
+                <a routerLink="/home">Home</a>
+              </li>
+              <li><a routerLink="/about" (click)="closeMenu()">About</a></li>
+              <li>
+                <a routerLink="/blog/posts" (click)="closeMenu()">Blog</a>
+              </li>
+              <li>
+                <a routerLink="/contacts" (click)="closeMenu()">Contact</a>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle">My profile <span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu h-nav">
+                  <li><a routerLink="/account-information" (click)="closeMenu()">Account information</a></li>
+                  <li><a routerLink="/favourites" (click)="closeMenu()">Favourites</a></li>
+                  <li><a routerLink="/own-adds" (click)="closeMenu()">Own ads</a></li>
+                  <li><a (click)="signOut()">Sign out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav><!--b-nav-->

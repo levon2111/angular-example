@@ -1,0 +1,104 @@
+<section class="b-search">
+  <div class="container">
+    <form class="b-search__main s-submit">
+
+      <div class="b-search__main-title">
+        <h2>UNSURE WHICH VEHICLE YOU ARE LOOKING FOR? FIND IT HERE</h2>
+      </div>
+
+      <!--VEHICLE TYPE-->
+      <app-vehicle-type></app-vehicle-type>
+      <!--VEHICLE TYPE-->
+
+      <div class="b-search__main-form">
+        <div class="row">
+          <div class="col-xs-12 col-md-8">
+            <div class="m-firstSelects">
+              <div class="col-xs-4">
+                <!--SELECT COMPONENT-->
+                <div class="select-box">
+                  <app-select
+                          [items]="['BMW', 'Lamborghini', 'Ferrari']"
+                          [placehold]="'Any Make'"
+                  ></app-select>
+                  <span class="fa fa-caret-down arrow-icon"></span>
+                </div>
+                <!--SELECT COMPONENT-->
+                <p>MISSING MANUFACTURER?</p>
+              </div>
+              <div class="col-xs-4">
+                <!--SELECT COMPONENT-->
+                <div class="select-box">
+                  <app-select
+                          [items]="['X3', 'X5', 'X6']"
+                          [placehold]="'Any Model'"
+                  ></app-select>
+                  <span class="fa fa-caret-down arrow-icon"></span>
+                </div>
+                <!--SELECT COMPONENT-->
+                <p>MISSING MODEL?</p>
+              </div>
+              <div class="col-xs-4">
+                <!--SELECT COMPONENT-->
+                <div class="select-box">
+                  <app-select
+                          [items]="['Generation 1', 'Generation 2', 'Generation 3', 'Generation 4', 'Generation 5', 'Generation 6', 'Generation 7', 'Generation 8']"
+                          [placehold]="'Any Model'"
+                  ></app-select>
+                  <span class="fa fa-caret-down arrow-icon"></span>
+                </div>
+                <!--SELECT COMPONENT-->
+                <p>Preferred generation</p>
+              </div>
+            </div>
+            <div class="m-secondSelects b-search__main-form-range">
+              <div class="price-range">
+                <label class="label">PRICE RANGE</label>
+                <div class="col-lg-6">
+                  <!--RANGE COMPONENT-->
+                  <app-range-slider></app-range-slider>
+                  <!--RANGE COMPONENT-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-12 s-noPadding">
+            <div class="b-search__main-form-range">
+              <div class="col-xs-6">
+                <!--SELECT COMPONENT-->
+                <div class="select-box">
+                  <app-select
+                          [items]="[{id: 1, name: '1991'}, {id: 1, name: '1992'}, {id: 1, name: '1993'}]"
+                          [placehold]="'Min Year'"
+                  ></app-select>
+                  <span class="fa fa-caret-down arrow-icon"></span>
+                </div>
+                <!--SELECT COMPONENT-->
+              </div>
+              <div class="col-xs-6">
+                <!--SELECT COMPONENT-->
+                <div class="select-box">
+                  <app-select
+                          [items]="[{id: 1, name: '1991'}, {id: 1, name: '1992'}, {id: 1, name: '1993'}]"
+                          [placehold]="'Max Year'"
+                  ></app-select>
+                  <span class="fa fa-caret-down arrow-icon"></span>
+                </div>
+                <!--SELECT COMPONENT-->
+              </div>
+            </div>
+            <div class="b-search__main-form-submit">
+              <a id="drop-label" class="drop-label" (click)="toggleAdvancedSearchSection()">Advanced search</a>
+              <button routerLink="/filter-list-view" class="btn m-btn">Search the Vehicle<span class="fa fa-angle-right"></span></button>
+            </div>
+          </div>
+
+          <!--ADVANCED-SEARCH-->
+          <app-advanced-search *ngIf="!isAdvancedSearchHidden"></app-advanced-search>
+          <!--ADVANCED-SEARCH-->
+
+        </div>
+      </div>
+    </form>
+  </div>
+</section><!--b-search-->
